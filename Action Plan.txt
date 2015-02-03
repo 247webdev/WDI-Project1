@@ -1,0 +1,56 @@
+Action plan for Christian Chandler's WDI project 1
+
+SCOPE:
+A given user uses this app to determin the a time to leave location to arrive at a designated BART station with a minimal amount of time waiting for the next train.
+The goal is to not arrive late for a train as well as not arrive too early. My wish is to be at the BART platform no more than 2min early. This depens entirely on the ability to accurately estimate the travel time from a start location to the BART station.
+	Items to consider in such an estimate:
+		If the app does get developed with Google's Distance Time Matrix, that is likely to the physical location and would not include time to park, gather belongings, exit the parking structure, walk to the station, buy a BART ticket, enter the station, pay for parking and get to the correct platform. This part is highly variable depending on date and time. Commute hours and special event are a major influence to stations.
+
+
+THE APP USES:
+=> BART's API for station and train information (a part of the app's MVP)
+=> Google's Distance Matrix API to estimate travel time from a location to a given BART station
+
+
+FEATURES:
+			MVP
+=> See leave in X time to catch the next train.
+=> Input to choose a station
+=> Input to set lead time
+
+			Bonuses
+=> A user's profile that contains their going and returning prefrences. In my case, this is my morning train / station and my evening train / station as well as my travel time from home and GA.
+=> Set ignore next if I know I'm doing something like dinner
+=> See times for later trains.
+=> Phone Gap the app to use as a mobile app.
+=> Use Google's Distance Time Matrix API to get lead-time estimate for any location to a BART station.
+=> Auto select my station of interest based on date / time
+=> A count-down timer for when to leave
+=> A count-down timer for when the train arrives
+=> A feature to refine the lead time by telling the mobile app that the estimate was too early, too late of good
+=> A feature to notify friends it’s time to leave
+=> A feature to just get the next train for any station in case you missed the intended train and now you want to make alternate plans
+
+
+MILESTONES:
+=> Get data from BART's API
+=> Utilize a XML to JSON converter / parser
+=> Build form to select a station
+=> Build form to input a lead time
+=> Store personal lead time
+=> Calculate best time to leave
+=> Test
+=> Style
+=> Refine UX / DI
+=> Refine layout
+=> Refine features
+
+REASOURCES:
+BART API call for station list
+http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V
+
+BART API version
+http://api.bart.gov/api/stn.aspx?cmd=ver&key=MW9S-E7SL-26DU-VV8V
+
+
+
