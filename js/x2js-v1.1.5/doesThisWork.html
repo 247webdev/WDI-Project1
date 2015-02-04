@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+ 
+<p id="someElement"></p>
+ 
+<script>
+var xml1 = "<root><uri>...</uri><date>02/02/2015</date><time>08:34:22 PM PST</time><station><name>El Cerrito del Norte</name><abbr>DELN</abbr><etd><destination>Fremont</destination><abbreviation>FRMT</abbreviation><estimate><minutes>7</minutes><platform>2</platform><direction>South</direction><length>6</length><color>ORANGE</color><hexcolor>#ff9933</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>26</minutes><platform>2</platform><direction>South</direction><length>6</length><color>ORANGE</color><hexcolor>#ff9933</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>46</minutes><platform>2</platform><direction>South</direction><length>6</length><color>ORANGE</color><hexcolor>#ff9933</hexcolor><bikeflag>1</bikeflag></estimate></etd><etd><destination>Richmond</destination><abbreviation>RICH</abbreviation><estimate><minutes>11</minutes><platform>1</platform><direction>North</direction><length>8</length><color>RED</color><hexcolor>#ff0000</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>18</minutes><platform>1</platform><direction>North</direction><length>6</length><color>ORANGE</color><hexcolor>#ff9933</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>31</minutes><platform>1</platform><direction>North</direction><length>9</length><color>RED</color><hexcolor>#ff0000</hexcolor><bikeflag>1</bikeflag></estimate></etd></station><message/></root>"
+var xml2 = "<root><date>02/02/2015</date><time>08:17:07 PM PST</time><station><name>Montgomery St.</name><abbr>MONT</abbr><etd><destination>Daly City</destination><abbreviation>DALY</abbreviation><estimate><minutes>12</minutes><platform>1</platform><direction>South</direction><length>9</length><color>BLUE</color><hexcolor>#0099cc</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>32</minutes><platform>1</platform><direction>South</direction><length>8</length><color>BLUE</color><hexcolor>#0099cc</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>51</minutes><platform>1</platform><direction>South</direction><length>8</length><color>BLUE</color><hexcolor>#0099cc</hexcolor><bikeflag>1</bikeflag></estimate></etd><etd><destination>Dublin/Pleasanton</destination><abbreviation>DUBL</abbreviation><estimate><minutes>11</minutes><platform>2</platform><direction>North</direction><length>8</length><color>BLUE</color><hexcolor>#0099cc</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>30</minutes><platform>2</platform><direction>North</direction><length>8</length><color>BLUE</color><hexcolor>#0099cc</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>50</minutes><platform>2</platform><direction>North</direction><length>8</length><color>BLUE</color><hexcolor>#0099cc</hexcolor><bikeflag>1</bikeflag></estimate></etd><etd><destination>Pittsburg/Bay Point</destination><abbreviation>PITT</abbreviation><estimate><minutes>3</minutes><platform>2</platform><direction>North</direction><length>10</length><color>YELLOW</color><hexcolor>#ffff33</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>23</minutes><platform>2</platform><direction>North</direction><length>8</length><color>YELLOW</color><hexcolor>#ffff33</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>42</minutes><platform>2</platform><direction>North</direction><length>9</length><color>YELLOW</color><hexcolor>#ffff33</hexcolor><bikeflag>1</bikeflag></estimate></etd><etd><destination>Richmond</destination><abbreviation>RICH</abbreviation><estimate><minutes>17</minutes><platform>2</platform><direction>North</direction><length>9</length><color>RED</color><hexcolor>#ff0000</hexcolor><bikeflag>1</bikeflag></estimate></etd><etd><destination>SFO/Millbrae</destination><abbreviation>MLBR</abbreviation><estimate><minutes>17</minutes><platform>1</platform><direction>South</direction><length>9</length><color>YELLOW</color><hexcolor>#ffff33</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>37</minutes><platform>1</platform><direction>South</direction><length>4</length><color>YELLOW</color><hexcolor>#ffff33</hexcolor><bikeflag>1</bikeflag></estimate><estimate><minutes>57</minutes><platform>1</platform><direction>South</direction><length>9</length><color>YELLOW</color><hexcolor>#ffff33</hexcolor><bikeflag>1</bikeflag></estimate></etd></station><message/></root>",
+  xmlDoc = $.parseXML( xml1 ),
+  $xml = $( xmlDoc ),
+  $XMLelement = $xml.find( "destination" );
+ 
+// Append "RSS Title" to #someElement
+$( "#someElement" ).append( $XMLelement.text() + "\n" );
+</script>
+ 
+</body>
+</html>
