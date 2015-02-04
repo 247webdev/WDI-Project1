@@ -32,22 +32,30 @@
         </li>
         <li><a href='schedule.html'>Personal Schedule</a></li>
         <li><a href='stations.html'>Stations</a></li>
-        <li><a href='about.html'>About</a></li>
       </ul>
     </div>
   </div>
   <div class='container'>
     <div class='row well well-lg'>
+<!-- DISPLAY KEEP CALM GRAPHIC -->
       <div class='col-md-2 visible-md visible-lg'>
         <img src='images/keepCalm.png' alt='Big ole button to pass to next train' width="200px" />
       </div>
-      <div class='col-md-6 col-md-offset-1'>
-        <h2>The best use of your time</h2>
-        <p class='lead'>Make your way to your BART station just in time to catch your train; not a moment wasted.</p>
+<!-- DISPLAY TIME -->
+      <div class='col-md-2 col-md-offset-1 visible-md visible-lg'>
+        <p id="currentTime"></p>
+        <script>
+          var myVar = setInterval( function(){ timer() }, 1000 );
+
+          function timer() {
+              var d = new Date();
+              document.getElementById("currentTime").innerHTML = d.toLocaleTimeString();
+          }
+        </script>
       </div>
     </div>
   </div>
-  <div class='container transport-systems'>
+<!--  <div class='container transport-systems'>
 
     <div class='row text-center'>
       <div class='transporter col-md-3 col-md-offset-1 well well-sm'>
@@ -78,7 +86,7 @@
         <p><button class='btn btn-info'><i class='glyphicon glyphicon-plane'></i> Blast Off!</button></p>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class='container'>
     <div class='row'>
       <div class='col-md-3 col-md-offset-1'>
@@ -86,40 +94,41 @@
           <div class='panel panel-success'>
             <div class='panel-heading'>
               <h4 class='panel-title'>
-                <a data-toggle='collapse' data-parent='.panel-group' href='#systemsOperational'>All Systems Operational</a>
+                <a data-toggle='collapse' data-parent='.panel-group' href='#bartStation'>Choose your station</a>
               </h4>
             </div>
-            <div id='systemsOperational' class='panel-collapse collapse in'>
+            <div id='bartStation' class='panel-collapse collapse in'>
               <div class='panel-body'>
-                <p>All systems are operational</p>
-                <ul class='list-unstyled'>
+                <select>
+                  <option>El Cerrito del Norte</option>
+                  <option>Montgomery</option> <!-- Handlebar this with the api's list of stations and their abbreviated name -->
+                </select>
+<!--                 <ul class='list-unstyled'>
                   <li><i class='glyphicon glyphicon-ok'></i>  Transporters</li>
                   <li><i class='glyphicon glyphicon-ok'></i>  Space Elevator</li>
                   <li><i class='glyphicon glyphicon-ok'></i>  RocketBus</li>
-                </ul>
+                </ul> -->
               </div>
             </div>
           </div>
 
-          <div class='panel panel-warning'>
+          <div class='panel panel-success'>
             <div class='panel-heading'>
               <h4 class='panel-title'>
-                <a data-toggle='collapse' data-parent='.panel-group' href='#weatherAlert'>Weather Alert</a>
+                <a data-toggle='collapse' data-parent='.panel-group' href='#trainLine'>Choose your train line</a>
               </h4>
             </div>
-            <div id='weatherAlert' class='panel-collapse collapse'>
+            <div id='trainLine' class='panel-collapse collapse'>
               <div class='panel-body'>
-                <p>The National Weather Service has issued a solar flare watch for the following time periods. Please plan accordingly:</p>
-                <ul class='list-unstyled'>
-                  <li><strong>February 9th, 21:43</strong></li>
-                  <li><strong>May 18, 19:82</strong></li>
-                  <li><strong>July 4, 08:42</strong></li>
-                </ul>
+                <select>
+                  <option>Richmond line</option>
+                  <option>Fremont line</option> <!-- Handlebar this with the api's list of stations and their abbreviated name -->
+                </select>
               </div>
             </div>
           </div>
 
-          <div class='panel panel-danger'>
+          <div class='panel panel-success'>
             <div class='panel-heading'>
               <h4 class='panel-title'>
                 <a data-toggle='collapse' data-parent='.panel-group' href='#transportationWarning'>Transportation Generals Warning: Transporters</a>
@@ -135,11 +144,22 @@
       </div>
     </div>
   </div>
+
+<!-- DISPLAY INTRO TAG-LINE -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-xs-offset-0 col-md-offset-1">
+        <h3>The best use of your time</h3>
+        <p class='lead'>Make your way to your BART station just in time to catch your train; not a moment wasted.</p>
+      </div>
+    </div>
+  </div>
+
   <div class='footer'>
     <div class='container'>
       <div class='row'>
 
-        <div class='col-md-offset-1 col-sm-2 col-xs-6'>
+        <div class='col-md-offset-1 col-sm-2 col-xs-4 col-xs-offset-0'>
           <h4>Links</h4>
           <ul class='list-unstyled'>
             <li><a href='/'>Home</a></li>
@@ -150,7 +170,7 @@
 
         <div class='clearfix visible-xs'></div>
 
-        <div class='col-sm-2 col-xs-6'>
+        <div class='col-sm-2 col-xs-4 col-xs-offset-0'>
           <h4>Stay in Touch</h4>
           <ul class='list-unstyled'>
             <li><a href='about.html'>About</a></li>
@@ -161,7 +181,7 @@
           </ul>
         </div>
 
-        <div class='col-md-3 col-md-offset-1 col-sm-4 col-xs-6'>
+        <div class='col-md-3 col-md-offset-1 col-sm-4 col-xs-4 col-xs-offset-0'>
           <h4>Contact</h4>
           <ul class='list-unstyled'>
             <li><i class='glyphicon glyphicon-globe'></i> Richmond, CA</li>

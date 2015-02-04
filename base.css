@@ -3,6 +3,13 @@ body {
 
 }
 
+#currentTime {
+	font-size: 30px;
+	font-weight: bold;
+	position: relative;
+	top: 16px;
+}
+
 .navContainer {
 
 }
