@@ -2,34 +2,17 @@
 <html>
 <head>
   <title>Arrive in time</title>
-  <link href="../commonTools/normalize.css" rel="stylesheet">
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
-  <link href='../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
-  <link href='css/base.css' rel='stylesheet'>
+  <link href="../../commonTools/normalize.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href='../../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
+  <link href='../base.css' rel='stylesheet'>
 </head>
 <body>
   <div class='navbar navbar-default navbar-static-top'>
     <div class='container'>
-      <a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>
-        <!-- <img src="images/crown.png"> -->
-        <span>Arrive in time</span>
-      </a>
+      <a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>Keep Calm and <span>Arrive in time</span></a>
 
       <ul class='nav navbar-nav navbar-right'>
-        <li>
-          <div class='btn-group'>
-            <span href='schedule.html' class='dropdown-toggle' data-toggle='dropdown'>
-              How it works<span class='caret'></span>
-            </span>
-            <ul class='dropdown-menu'>
-              <li><a href='pattern.html'>Set your travel pattern</a></li>
-              <li><a href='departTimes.html'>Choose prefered departing time</a></li>
-              <li><a href='notify.html'>Add groups to notify</a></li>
-              <li class='divider'></li>
-              <li><a href='learnMore.html'>Learn More</a></li>
-            </ul>
-          </div>
-        </li>
         <li><a href='schedule.html'>Personal Schedule</a></li>
         <li><a href='stations.html'>Stations</a></li>
         <li><a href='about.html'>About</a></li>
@@ -38,16 +21,37 @@
   </div>
   <div class='container'>
     <div class='row well well-lg'>
-      <div class='col-md-2 visible-md visible-lg'>
-        <img src='images/keepCalm.png' alt='Big ole button to pass to next train' width="200px" />
-      </div>
-      <div class='col-md-6 col-md-offset-1'>
+      <div class='col-md-6'>
         <h2>The best use of your time</h2>
         <p class='lead'>Make your way to your BART station just in time to catch your train; not a moment wasted.</p>
+
+        <div class='btn-group'>
+          <button type='button' class='btn btn-default btn-lg dropdown-toggle' data-toggle='dropdown'>
+            How it works<span class='caret'></span>
+          </button>
+          <ul class='dropdown-menu'>
+            <li><a href='pattern.html'>Set up your travel pattern</a></li>
+            <li><a href='departTimes.html'>Choose your prefered departing times</a></li>
+            <li><a href='notify.html'>Add groups to notify</a></li>
+            <li class='divider'></li>
+            <li><a href='learnMore.html'>Learn More</a></li>
+          </ul>
+        </div>
+
+        <button type='button' class='btn btn-lg btn-primary'>Book Tickets Now</button>
+      </div>
+      <div class='col-md-6 visible-md visible-lg'>
+        <img src='images/PUTIMAGE-HERE-MAYBE-THE-BIG-OLE-BUTTON.jpg' alt='Big ole button to pass to next train' />
       </div>
     </div>
   </div>
   <div class='container transport-systems'>
+    <div class='row'>
+      <div class='col-md-10 col-md-offset-1'>
+        <h2>Our Transport Systems</h2>
+        <p>Learn more about our transport systems to find out which one is right for you. Pick out the mode of transport that works for your budget and risk level.</p>
+      </div>
+    </div>
 
     <div class='row text-center'>
       <div class='transporter col-md-3 col-md-offset-1 well well-sm'>
@@ -79,8 +83,38 @@
       </div>
     </div>
   </div>
+  <div class='quote'>
+    <div class='container'>
+      <blockquote>
+        <p>A dream that became a reality and spread throughout the stars.</p>
+        <footer>Captain Kirk in <cite title="Source Title">Whom Gods Destroy</cite></footer>
+      </blockquote>
+    </div>
+  </div>
   <div class='container'>
     <div class='row'>
+      <div class='col-md-8'>
+        <h2>Plan Your Trip Today!</h2>
+
+        <ul class='nav nav-tabs'>
+          <li class='active'><a href='#time'>Todays Times</a></li>
+          <li><a href='#deals'>Hot Deals</a></li>
+          <li><a href='#forecast'>Forecast</a></li>
+        </ul>
+
+        <div class='tab-content'>
+          <div class='tab-pane fade active' id='time'>
+            <p>Todays Time here</p>
+          </div>
+          <div class='tab-pane fade' id='deals'>
+            <p>Deals here</p>
+          </div>
+          <div class='tab-pane fade' id='forecast'>
+            <p>Forecast</p>
+          </div>
+        </div>
+      </div>
+
       <div class='col-md-3 col-md-offset-1'>
         <div class='panel-group'>
           <div class='panel panel-success'>
@@ -138,6 +172,11 @@
   <div class='footer'>
     <div class='container'>
       <div class='row'>
+        <div class='col-md-3 col-sm-4 col-xs-6'>
+          <h4>Who We Are</h4>
+          <p><i>Blasting Off With Bootstrap</i> is the fastest way to space. <a href='tickets.html'>Book your ticket today</a>!</p>
+          <p><a href='about.html'>More About Us <i class='glyphicon glyphicon-arrow-right'></i></a></p>
+        </div>
 
         <div class='col-md-offset-1 col-sm-2 col-xs-6'>
           <h4>Links</h4>
@@ -175,9 +214,9 @@
   </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
+  <script src='js/bootstrap.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="app.js"></script>
   <script>
     $(function() {
       $('.nav-tabs a').click(function (e) {
