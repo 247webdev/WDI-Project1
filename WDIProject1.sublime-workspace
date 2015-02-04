@@ -1,0 +1,739 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"bo",
+				"bold"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"bar",
+				"bartData"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"mov",
+				"moviePoster"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"t",
+				"top"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"li",
+				"list-style-image"
+			],
+			[
+				"nor",
+				"normal"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"m",
+				"mTitle"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"get",
+				"getUserPhoto"
+			],
+			[
+				"git",
+				"gitURL"
+			],
+			[
+				"gi",
+				"gitURL"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"ps",
+				"passLength"
+			],
+			[
+				"pa",
+				"passLength"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"fin",
+				"finishLine"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"h",
+				"height	Attr"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"dat",
+				"dataString"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"n",
+				"no-repeat"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"b",
+				"bold"
+			],
+			[
+				"hea",
+				"header	Tag"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"pto",
+				"prototype"
+			],
+			[
+				"new",
+				"newNameElement"
+			],
+			[
+				"hid",
+				"hideMe"
+			],
+			[
+				"rem",
+				"remove"
+			],
+			[
+				"cap",
+				"capitalizeName"
+			],
+			[
+				"to",
+				"toUpperCase"
+			],
+			[
+				"str",
+				"strPieces"
+			],
+			[
+				"hide",
+				"hideElements"
+			],
+			[
+				"ne",
+				"newName"
+			],
+			[
+				"gam",
+				"gameObj"
+			],
+			[
+				"play",
+				"playHere"
+			],
+			[
+				"re",
+				"removeEventListener"
+			],
+			[
+				"who",
+				"whosFirst"
+			],
+			[
+				"com",
+				"computer"
+			],
+			[
+				"setAl",
+				"setAlpha"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"getElementBy",
+				"getElementsByClassName"
+			],
+			[
+				"players",
+				"playersName"
+			],
+			[
+				"getE",
+				"getElementById"
+			],
+			[
+				"sub",
+				"submit"
+			],
+			[
+				"red",
+				"readyNewGame"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"class",
+				"classList"
+			],
+			[
+				"game",
+				"gameObj"
+			],
+			[
+				"mouse",
+				"mouseleave"
+			],
+			[
+				"ga",
+				"gameBoardSytle"
+			],
+			[
+				"fr",
+				"for	for (…) {…}"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"g",
+				"green"
+			],
+			[
+				"x",
+				"xMouseOver"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"mou",
+				"mouseover"
+			],
+			[
+				"cl",
+				"clickBox"
+			],
+			[
+				"cli",
+				"clickButton"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"text",
+				"text-decoration"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"set xml",
+				"Set Syntax: XML"
+			],
+			[
+				"set js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set j",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set h",
+				"Set Syntax: HTML"
+			],
+			[
+				"sublimelinter:t",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"sub",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"setj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"set",
+				"Set Syntax: HTML"
+			],
+			[
+				"Snippet: ",
+				"Snippet: mediaquery"
+			],
+			[
+				"set ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"set html",
+				"Set Syntax: HTML"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/christianbc/wdi/Project1/base.css",
+		"/Users/christianbc/wdi/Project1/readme.md",
+		"/Users/christianbc/wdi/Project1/js/bartAPI.js",
+		"/Users/christianbc/wdi/Project1/testGetBARTStation.html",
+		"/Users/christianbc/wdi/Project1/index.html",
+		"/Users/christianbc/wdi/Project1/Action Plan.txt",
+		"/Users/christianbc/wdi/Project1/frontEnd/index.html",
+		"/Users/christianbc/wdi/Project1/bart/api.js",
+		"/Users/christianbc/wdi/Project1/tree/TestBART-API/bart station list.txt",
+		"/Users/christianbc/wdi/Project1/app.js",
+		"/Users/christianbc/wdi/Project1/learnMore.html",
+		"/Users/christianbc/wdi/Project1/notify.html",
+		"/Users/christianbc/wdi/Project1/departTimes.html",
+		"/Users/christianbc/wdi/Project1/pattern.html",
+		"/Users/christianbc/wdi/commonTools/normalize.css",
+		"/Users/christianbc/.zshrc",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/scripthandlebars.sublime-snippet",
+		"/Users/christianbc/wdi/03week/lecture/omdb_API_Lab/index.html",
+		"/Users/christianbc/wdi/03week/lecture/omdb_API_Lab/app.js",
+		"/Users/christianbc/wdi/experiments/baseHTML.html",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/starthtml.sublime-snippet",
+		"/Users/christianbc/wdi/03week/labs/ex3-validation/readme.md",
+		"/Users/christianbc/wdi/03week/labs/ex2-todoApp/base.css",
+		"/Users/christianbc/wdi/03week/lecture/learnjquery/index.html",
+		"/Users/christianbc/wdi/03week/lecture/learnjquery/newpage.html",
+		"/Users/christianbc/wdi/03week/lecture/learnjquery/base.css",
+		"/Users/christianbc/wdi/03week/lecture/learnjquery/bundle.js",
+		"/Users/christianbc/wdi/experiments/jQueryEventAnimations",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/docready.sublime-snippet",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/jquery.sublime-snippet",
+		"/Users/christianbc/wdi/02week/labs/drag_race_new_game/js/bundle.js",
+		"/Users/christianbc/wdi/02week/labs/drag_race_new_game/css/main.css",
+		"/Users/christianbc/wdi/02week/labs/drag_race_new_game/readme.md",
+		"/Users/christianbc/wdi/02week/labs/drag_race_new_game/index.html",
+		"/Users/christianbc/wdi/hackaThon/app/scripts/main.js",
+		"/Users/christianbc/wdi/hackaThon/app/paris.html",
+		"/Users/christianbc/wdi/hackaThon/app/index.html",
+		"/Users/christianbc/wdi/hackaThon/app/pinDetail.html",
+		"/Users/christianbc/wdi/hackaThon/app/stephan.html",
+		"/Users/christianbc/wdi/hackaThon/app/chris.html",
+		"/Users/christianbc/wdi/hackaThon/testData.js",
+		"/Users/christianbc/wdi/hackaThon/app/_logIn/signIn.js",
+		"/Users/christianbc/wdi/01week/labs/5_tic-tac-toe_lab/app.js",
+		"/Users/christianbc/wdi/01week/labs/5_tic-tac-toe_lab/base.css",
+		"/Users/christianbc/wdi/02week/labs/drag-race/css/main.css",
+		"/Users/christianbc/wdi/02week/labs/drag-race/js/bundle.js",
+		"/Users/christianbc/wdi/02week/labs/drag-race/myTrack.html",
+		"/Users/christianbc/wdi/02week/labs/drag_race/testingMove/testMoveElement.html",
+		"/Users/christianbc/wdi/02week/labs/drag-race/README.md",
+		"/Users/christianbc/wdi/experiments/sandwichMenu.html",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/normalizelink.sublime-snippet",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/writeGetElementsByClassName.sublime-snippet",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/linkToTestCSS.sublime-snippet",
+		"/Users/christianbc/wdi/02week/labs/drag-race/index.html",
+		"/Users/christianbc/wdi/02week/labs/drag-race/.gitignore",
+		"/Users/christianbc/wdi/02week/labs/drag-race/gulpfile.js",
+		"/Users/christianbc/wdi/02week/labs/drag-race/package.json",
+		"/Users/christianbc/wdi/02week/labs/drag-race/.DS_Store",
+		"/Users/christianbc/wdi/02week/labs/drag_race/testingMove/testMoveElement.js",
+		"/Users/christianbc/wdi/02week/labs/car_lab/src/car.js",
+		"/Users/christianbc/wdi/02week/labs/car_lab/ReadMe.md",
+		"/src/car.js",
+		"/src/test.js",
+		"/Users/christianbc/wdi/02week/labs/iterators/README.md",
+		"/Users/christianbc/wdi/02week/lecture/test_driven_development/simple_sample_tdd_example/src/simple_sample.js",
+		"/Users/christianbc/wdi/02week/lecture/test_driven_development/simple_sample_tdd_example/test/simple_sample_test.js",
+		"/Users/christianbc/wdi/02week/labs/iterators/test/iterators_test.js",
+		"/Users/christianbc/wdi/02week/labs/iterators/src/iterators.js",
+		"/Users/christianbc/wdi/01week/labs/5_tic-tac-toe_lab/index.html",
+		"/Users/christianbc/wdi/01week/labs/tic-tac-toe_lab/README.md",
+		"/Users/christianbc/wdi/01week/lecture/html_css_bootstrap/bootstrap examples/2 - grid.html",
+		"/Users/christianbc/wdi/01week/labs/4_dom_lab/app.js",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/getElementsByClassName",
+		"/Users/christianbc/wdi/01week/labs/tic-tac-toe_lab/css/ticTacToe.css",
+		"/Users/christianbc/wdi/01week/labs/tic-tac-toe_lab/index.html",
+		"/Users/christianbc/.gitconfig",
+		"/Users/christianbc/wdi/01week/lecture/dom_exercises/ids/README.md",
+		"/Users/christianbc/wdi/01week/lecture/dom_exercises/ids/ids.html",
+		"/Users/christianbc/wdi/01week/labs/functions-lab/problem1.js",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/commonTools.sublime-snippet",
+		"/Users/christianbc/wdi/labs/bootstrap_lab/mock2/mock2.html",
+		"/Users/christianbc/Documents/ga/Homework/day2-mock3.html",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/mediaquery.sublime-snippet",
+		"/Users/christianbc/Library/Application Support/Sublime Text 3/Packages/User/bootstrapcss.sublime-snippet",
+		"/Users/christianbc/Documents/ga/sublime/css_demo.html",
+		"/Users/christianbc/Documents/ga/sublime/start.html"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<name>",
+			"</name>",
+			"		<name>",
+			"<abbr>",
+			".navContainer {\n",
+			"div",
+			"Long",
+			"mTitle",
+			"var",
+			"('form').",
+			"mTitle",
+			"preStageLights",
+			"\" on\";",
+			".style.left",
+			"203px",
+			" id=\"\"",
+			"start-lights",
+			"engine",
+			"88px",
+			"start-lights",
+			"\"",
+			"dataString",
+			"start-lights",
+			"div",
+			"><a ",
+			"<a href=\"j",
+			"Pos\" id=\"",
+			"<a href=\"#\">",
+			"xxxxxx",
+			"<div id=\"",
+			"{",
+			"}",
+			"<div></div>",
+			"\"absP",
+			"abs1Po",
+			",100,1)",
+			"<li id=\"",
+			"<li>",
+			"0,0,100,1)",
+			",30,.2",
+			"div",
+			",f,",
+			"0,0,0,1",
+			".4",
+			"left",
+			"state",
+			"this",
+			";",
+			"	",
+			",",
+			"buddy",
+			"nextPlayer",
+			"playerAlpha",
+			"nextPlayer",
+			"whosFirst",
+			"setFirstPlayer",
+			"getElementById(\"nextPlayer\"",
+			"playersName",
+			"readyNewGame",
+			"Start",
+			"addPlayerName",
+			"strWords",
+			"strPieces",
+			"strTogether",
+			"addEventListener",
+			"gameObj.boardStyle[i]",
+			"whosTurn",
+			"start-human",
+			"preventDefault",
+			"gameCell",
+			"mymove",
+			"{\n	position: relative;",
+			"{\n	position: relative;\n	top:",
+			"{\n	border: 4px solid #ddd;\n\n	position: ",
+			"gameBoardArray",
+			"gameBoardStyle",
+			"Sytle",
+			"playHere",
+			"resetBoard",
+			"class=\"col-sm-4 text-center col",
+			"Things",
+			"li",
+			"col1",
+			"row1 col1",
+			"col-sm-4 text-center ",
+			"div",
+			"<div class=\"col-sm-4 text-center\">",
+			"exampleInputEmail1",
+			"computer",
+			"Computer",
+			"<i class=\"fa fa-",
+			"small-4 columns text-center",
+			"subheader",
+			"rel=\"stylesheet\" ",
+			"doFive",
+			"#",
+			"div",
+			"span",
+			"div",
+			"li",
+			"header",
+			"div",
+			"h",
+			"td",
+			"h"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "WDIProject1.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 50.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

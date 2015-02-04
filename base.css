@@ -1,6 +1,11 @@
 body {
 	padding: 5px;
+	background-color: #A0FF3F;
+}
 
+.navbar-brand span {
+	color: #c52442;
+	font-weight: bold;
 }
 
 .navContainer {
@@ -26,3 +31,21 @@ body {
 .xxxxxxx {
 	
 }
+
+.heart {
+	content: " &#9829; ";
+}
+}
+
+/*
+make this appear on hover
+<i class='glyphicon glyphicon-arrow-right'></i>
+*/
+
+/*
+#32FF53  lime green		
+#4BE82E	mossy green		
+#A0FF3F 	pea green		background
+#CDE82E 	mustard green	
+#FFF332 	mustard			
+*/
