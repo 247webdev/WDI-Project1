@@ -17,6 +17,8 @@ FEATURES:
 => See leave in X time to catch the next train.
 => Input to choose a station
 => Input to set lead time
+=> Get BART real-time train time for a given station, train line and direction
+
 
 			Bonuses
 => A user's profile that contains their going and returning prefrences. In my case, this is my morning train / station and my evening train / station as well as my travel time from home and GA.
@@ -52,5 +54,14 @@ http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V
 BART API version
 http://api.bart.gov/api/stn.aspx?cmd=ver&key=MW9S-E7SL-26DU-VV8V
 
+BART API time to walking to station
+http://www.bart.gov/stations/closest?tofrom=to&address=225%20Bush%20St%2C%20San%20Francisco%2C%20ca&station=MONT&mode=WALKING
+
+		Proj1 colors
+32FF53  lime green
+4BE82E	mossy green
+A0FF3F 	pea green
+CDE82E 	mustard green
+FFF332 	mustard
 
 
