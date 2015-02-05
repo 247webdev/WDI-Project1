@@ -52,5 +52,19 @@ http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V
 BART API version
 http://api.bart.gov/api/stn.aspx?cmd=ver&key=MW9S-E7SL-26DU-VV8V
 
+BART train line map (5 train lines, the yellow and red lines have two different endpoints in SF)
+Richmond has red and orange line
+Pittsburg / Bay Point has yellow line
+Dublin / Pleasanton has blue line
+Fremont has orange and green line
+Daly City has red, blue and green lines (yellow goes thru to SFO)
+Millbrae has red (M-F < 8pm) and yellow (M-F > 8pm) lines
+SFO airport has yellow line
+
+CODE notes
+class chillTime		>  10 min to go = color: green
+class getReadyTime	<= 10 min to go = color: yellow
+class goTime		<  5 min to go = color: red
+
 
 
