@@ -7,11 +7,12 @@
   <link href='../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
   <link href='base.css' rel='stylesheet'>
 </head>
+
+
 <body>
   <div class='navbar navbar-default navbar-static-top'>
     <div class='container'>
       <a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>
-        <!-- <img src="images/crown.png"> -->
         <span>Arrive in time</span>
       </a>
 
@@ -35,23 +36,64 @@
       </ul>
     </div>
   </div>
-  <div class='container'>
-    <div class='row well well-lg'>
-<!-- DISPLAY KEEP CALM GRAPHIC -->
-      <div class='col-md-2 visible-md visible-lg'>
-        <img src='images/keepCalm.png' alt='Big ole button to pass to next train' width="200px" />
+
+<!-- DISPLAY INTRO TAG-LINE -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-xs-offset-0 text-center visible-md visible-lg">
+        <p class='lead'>Catch your BART train just in time; not a moment wasted.</p>
       </div>
+      <div class="col-xs-12 col-xs-offset-0 text-center visible-sm">
+        <p class='lead smallText'>Catch your BART train just in time; not a moment wasted.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row'>
+    <div class='col-xs-3 col-md-2'>
+      <img src='images/keepCalm.png' alt='Big ole button to pass to next train' width="200px" />
+    </div>
+<!-- DISPLAY KEEP CALM GRAPHIC 
+    <div class='col-md-2 visible-md visible-lg'>
+      <img src='images/keepCalm.png' alt='Big ole button to pass to next train' width="200px" />
+    </div> -->
 <!-- DISPLAY TIME -->
-      <div class='col-md-2 col-md-offset-1 visible-md visible-lg'>
+      <div class='col-md-2 col-md-offset-1'>
         <p id="currentTime"></p>
         <script>
-          var myVar = setInterval( function(){ timer() }, 1000 );
+          var myVar = setInterval( function(){ timer(); }, 1000 );
 
           function timer() {
               var d = new Date();
               document.getElementById("currentTime").innerHTML = d.toLocaleTimeString();
           }
         </script>
+      </div>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='row well well-lg'>
+      <div class='col-md-3 col-md-offset-1'>
+        <h4 class='panel-title'>Station</h4>
+        <select>
+          <option>El Cerrito del Norte</option>
+          <option>Montgomery</option> <!-- Handlebar this with the api's list of stations and their abbreviated name -->
+        </select>
+      </div>
+
+      <div class='col-md-3 col-md-offset-1'>
+        <h4 class='panel-title'>Train Line</h4>
+        <select>
+          <option>Richmond line</option>
+          <option>Fremont line</option> <!-- Handlebar this with the api's list of stations and their abbreviated name -->
+        </select>
+      </div>
+
+      <div class='col-md-3 col-md-offset-1'>
+        <h4 class='panel-title'>Walking Time</h4>
+        <input id="leadTime" placeholder="15 min" ></input>
       </div>
     </div>
   </div>
@@ -87,8 +129,10 @@
       </div>
     </div>
   </div> -->
-  <div class='container'>
-    <div class='row'>
+
+
+<!--   <div class='container'>
+    <div class='row well well-lg'>
       <div class='col-md-3 col-md-offset-1'>
         <div class='panel-group'>
           <div class='panel panel-success'>
@@ -101,13 +145,13 @@
               <div class='panel-body'>
                 <select>
                   <option>El Cerrito del Norte</option>
-                  <option>Montgomery</option> <!-- Handlebar this with the api's list of stations and their abbreviated name -->
+                  <option>Montgomery</option> <!- Handlebar this with the api's list of stations and their abbreviated name - ->
                 </select>
-<!--                 <ul class='list-unstyled'>
+<!- -                 <ul class='list-unstyled'>
                   <li><i class='glyphicon glyphicon-ok'></i>  Transporters</li>
                   <li><i class='glyphicon glyphicon-ok'></i>  Space Elevator</li>
                   <li><i class='glyphicon glyphicon-ok'></i>  RocketBus</li>
-                </ul> -->
+                </ul> - ->
               </div>
             </div>
           </div>
@@ -122,7 +166,7 @@
               <div class='panel-body'>
                 <select>
                   <option>Richmond line</option>
-                  <option>Fremont line</option> <!-- Handlebar this with the api's list of stations and their abbreviated name -->
+                  <option>Fremont line</option> <!- - Handlebar this with the api's list of stations and their abbreviated name - ->
                 </select>
               </div>
             </div>
@@ -143,68 +187,77 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-<!-- DISPLAY INTRO TAG-LINE -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-8 col-xs-offset-0 col-md-offset-1">
-        <h3>The best use of your time</h3>
-        <p class='lead'>Make your way to your BART station just in time to catch your train; not a moment wasted.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class='footer'>
+  <div class='footer nav navbar-default navbar-fixed-bottom'>
     <div class='container'>
+
       <div class='row'>
 
-        <div class='col-md-offset-1 col-sm-2 col-xs-4 col-xs-offset-0'>
-          <h4>Links</h4>
-          <ul class='list-unstyled'>
-            <li><a href='/'>Home</a></li>
-            <li><a href='tickets.html'>Tickets</a></li>
-            <li><a href='stations.html'>Stations</a></li>
-          </ul>
-        </div>
+        <span class="hidden-xs">
+          <div class='col-sm-6'>
+            <span><a href='http://247webdev.blogspot.com/' target="_new">Blog</a></span>
+            <span class="hidden-sm">|</span>
+            <span><a href='http://twitter.com/DroidAppy' target="_new">Twitter</a></span>
+            <span class="hidden-sm">|</span>
+            <span><a href='https://www.facebook.com/faceChandler' target="_new">Facebook</a></span>
+            <span class="hidden-sm">|</span>
+            <span><a href='http://www.linkedin.com/in/christianchandler/' target="_new">Linkedin</a></span>
+            <span class="hidden-sm">|</span>
+            <span><a href='https://plus.google.com/113001875924737671984/posts' target="_new">Google+</a></span>
+          </div>
 
-        <div class='clearfix visible-xs'></div>
+          <div class='col-sm-6'>
+            <span><i class='glyphicon glyphicon-globe'></i> Richmond, CA</span>
+            <span class="hidden-sm">|</span>
+            <span><i class='glyphicon glyphicon-phone'></i> 510-852-0139</span>
+            <span class="hidden-sm">|</span>
+            <span><i class='glyphicon glyphicon-envelope'></i><a href='mailto:247webdev@gmail.com'> 247webdev@gmail.com</a></span>
+          </div>
+        </span><!-- END hidden-xs -->
 
-        <div class='col-sm-2 col-xs-4 col-xs-offset-0'>
-          <h4>Stay in Touch</h4>
-          <ul class='list-unstyled'>
-            <li><a href='about.html'>About</a></li>
-            <li><a href='contact.html'>Contact Us</a></li>
-            <li><a href='/blog'>Blog</a></li>
-            <li><a href='http://twitter.com/DroidAppy'>Twitter</a></li>
-            <li><a href='http://facebook.com/codeschool'>Facebook</a></li>
-          </ul>
-        </div>
+        <span class="visible-xs">
+          <div class="row">
+            <div class='col-sm-12 col-xs-offset-0'>
+              <span><a href='http://247webdev.blogspot.com/' target="_new">Blog</a></span>
+              <span><a href='http://twitter.com/DroidAppy' target="_new">Twitter</a></span>
+              <span><a href='https://www.facebook.com/faceChandler' target="_new">Facebook</a></span>
+              <span><a href='http://www.linkedin.com/in/christianchandler/' target="_new">Linkedin</a></span>
+              <span><a href='https://plus.google.com/113001875924737671984/posts' target="_new">Google+</a></span>
+            </div>
+          </div>
 
-        <div class='col-md-3 col-md-offset-1 col-sm-4 col-xs-4 col-xs-offset-0'>
-          <h4>Contact</h4>
-          <ul class='list-unstyled'>
-            <li><i class='glyphicon glyphicon-globe'></i> Richmond, CA</li>
-            <li><i class='glyphicon glyphicon-phone'></i> 510-852-0139</li>
-            <li><i class='glyphicon glyphicon-envelope'></i> <a href='mailto:247webdev@gmail.com'>247webdev@gmail.com</a></li>
-          </ul>
-          <p><span class="heart"></span> Arrive In Time</p>
+          <div class="row">
+            <div class='col-sm-12 visible-xs'>
+              <span><i class='glyphicon glyphicon-globe'></i> Richmond, CA</span>
+              <span><i class='glyphicon glyphicon-phone'></i> 510-852-0139</span>
+              <span><i class='glyphicon glyphicon-envelope'></i><a href='mailto:247webdev@gmail.com'> 247webdev@gmail.com</a></span>
+            </div>
+
+          </div>
+        </span><!-- END visible-xs -->
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="muted text-center lower"><span class="emphasis">Arrive In Time</span> - Christian Chandler's WDI Project #1 with <span class="visible-xs">&#13;</span>design collaboration from Steven Tran UXDi. Thanks!</p>          
         </div>
       </div>
+
     </div>
   </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  <script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
   <script src="js/app.js"></script>
-  <script>
+<!--   <script>
     $(function() {
       $('.nav-tabs a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
       });
     });
-  </script>
+  </script> -->
 </body>
 </html>
