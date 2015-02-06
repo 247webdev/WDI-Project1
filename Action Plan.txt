@@ -19,7 +19,6 @@ FEATURES:
 => Input to set lead time
 => Get BART real-time train time for a given station, train line and direction
 
-
 			Bonuses
 => A user's profile that contains their going and returning prefrences. In my case, this is my morning train / station and my evening train / station as well as my travel time from home and GA.
 => Set ignore next if I know I'm doing something like dinner
@@ -47,6 +46,7 @@ MILESTONES:
 => Refine layout
 => Refine features
 
+
 REASOURCES:
 BART API call for station list
 http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V
@@ -57,11 +57,44 @@ http://api.bart.gov/api/stn.aspx?cmd=ver&key=MW9S-E7SL-26DU-VV8V
 BART API time to walking to station
 http://www.bart.gov/stations/closest?tofrom=to&address=225%20Bush%20St%2C%20San%20Francisco%2C%20ca&station=MONT&mode=WALKING
 
-		Proj1 colors
+
+BART train line map (5 train lines, the yellow and red lines have two different endpoints in SF)
+Richmond has red and orange line
+Pittsburg / Bay Point has yellow line
+Dublin / Pleasanton has blue line
+Fremont has orange and green line
+Daly City has red, blue and green lines (yellow goes thru to SFO)
+Millbrae has red (M-F < 8pm) and yellow (M-F > 8pm) lines
+SFO airport has yellow line
+
+CODE notes
+class chillTime		>  10 min to go = color: green
+class getReadyTime	<= 10 min to go = color: yellow
+class goTime		<  5 min to go = color: red
+used for "Leave in X min"
+
+GET FROM USER
+need which station
+which train line
+how much lead time
+
+GET FROM API
+station time for upcomming trains
+
+CALCULATE IN APP
+train time + 1 min - lead time = time remaining until you need to leave  {{{ if this time is negative, select the next train and process that time }}}
+
+
+PROJ1 COLORS?
 32FF53  lime green
 4BE82E	mossy green
 A0FF3F 	pea green
 CDE82E 	mustard green
 FFF332 	mustard
+
+
+
+
+
 
 
