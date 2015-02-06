@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src="https://x2js.googlecode.com/hg/xml2json.js"></script> <!-- needed for parsing XML to JSON -->
+
+</head>
+<body>
+	<div id="errorMsg"></div>
+
+	<div>
+		<div>Stations: <span class="container"></span></div><!-- this is where handlebars puts the stations dropdown -->
+		<div>Train line: <span class="container2"><select><option disabled="disabled"></option></select></span>
+		</div><!-- this is where handlebars puts the trian line dropdown -->
+		<div>Minutes of walking time: <span class="walkTimeSelect"></span><!-- <input type="text" placeholder="20"> --></div>
+	</div>
+
+	<script id="staionList-template" type="text/x-handlebars-template">
+		<select name="stationAbbr" id="chooseStation" style="display: inline-block;" required autofocus>
+			<option disabled>-What station are you leaving from?</option>
+			{{#each stationData.root.stations.station}}
+				<option value="{{abbr}}">{{name}}</option>
+			{{/each}}
+		</select>
+	</script>
+
+<!--
+At this point, user has selected a station.
+Now, which direction?
+http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DELN&key=MW9S-E7SL-26DU-VV8V
+Data path:
+root.station.etd[i].destination and abbreviation
+ -->
+	<script id="trainLine-template" type="text/x-handlebars-template">
+		<select name="trainRoute" id="chooseRoute" required autofocus>
+			<option disabled>-Which train direction?</option>
+			{{#each stationData.root.station.etd}}
+				<option value="{{abbreviation}}">{{destination}}</option>
+			{{/each}}
+		</select>
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+	<script src="js/apiStations.js"></script>
+	<script src="js/logicStations.js"></script>
+</body>
+</html>
