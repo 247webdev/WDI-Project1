@@ -5,7 +5,7 @@ $(document).ready(function(){
 			"stationIndex":"", // not needed
 			"route":"",
 			"routeIndex":"",
-			"leadTime":"",
+			"leadTime":"1",
 			"trainObj":""
 		},
 		bartData,
@@ -146,12 +146,26 @@ console.log( bartData );
 
 	var getTime = function(){
 // console.log("bartData: " + bartData + "user.routeIndex: " + user.routeIndex );
-console.log("Get train time: " + bartData.root.station.etd[1].estimate[0].minutes );
-	// user.root.station.etd[0].abbreviation
+// console.log("Get train time: " + bartData.root.station.etd[ user.routeIndex ].estimate[0].minutes );
+// console.log("Num of trains coming soon: " + bartData.root.station.etd[ user.routeIndex ].estimate.length );
 	// root.station.etd[i].abbreviation
-		// 				  .destination
-		// 				  .estimate[i]
-		// 						.minutes 
+	//	 				  .destination
+	//	 				  .estimate[i]
+	// 						  .minutes 
+	var stationObj = bartData.root.station.etd[ user.routeIndex ];
+	for (var i = 0; i < stationObj.estimate.length; i++) {
+			var trainTime = parseInt( stationObj.estimate[i].minutes )-1;
+// console.log( "trainTime: " + trainTime );
+// console.log( user.leadTime );
+
+			if ( trainTime > user.leadTime ) {
+				var timeResult = trainTime - user.leadTime;
+				// console.log( "Train lead time: " + stationObj.estimate[i].minutes );
+				// console.log( "User lead time: " + user.leadTime );
+				// console.log( "Index: " + i + " has " + timeResult.toString() + " time.");
+				console.log( ">>> " + timeResult.toString() );
+			}
+		}
 	};
 
 
@@ -182,7 +196,7 @@ $('body').on('change', '#chooseRoute', function( e ){
 $('body').on('change', '#chooseWalkTime', function( e ){
 	user.leadTime = $("#chooseWalkTime").val();
 
-	// console.log("\nLead Time Value: " + user.leadTime );
+// console.log("\nLead Time Value: " + user.leadTime );
 });
 
 // listener for the button which calls the getTime() funct
