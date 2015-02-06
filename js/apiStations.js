@@ -1,5 +1,10 @@
 $(document).ready(function() {
 	var x2js = new X2JS(),
+		user = {
+			"station":"STATION!",
+			"route":"ROUTE!!",
+			"leadTime":"LEADTIME!!!"
+		},
 		recursionCount = 0,
 		apiKeyIndex = 0,
 		apiKeys = ["QYVK-J9QW-IUDQ-DT35", "QSVS-UI6Y-ILTQ-DT35", "MW9S-E7SL-26DU-VV8V"], // QYVK... and QSVS... are mine, MW9S... is BART's
@@ -140,18 +145,41 @@ console.log( bartData );
 getStations();
 
 
-
+// listener for the user's choice of a station
 $('body').on('change', '#chooseStation', function( e ){
-	console.log("\nTarget Value: " + $("#chooseStation").val() );
+	user.station = $("#chooseStation").val();
 
-	getRoutes( $("#chooseStation").val() );
+	console.log("\nStation Value: " + user.station );
+
+	getRoutes( user.station );
 });
 
+// listener for the user's choice of a train line
 $('body').on('change', '#chooseRoute', function( e ){
-	console.log("\nTarget Value: " + $("#chooseRoute").val() );
+	user.route = $("#chooseRoute").val();
 
-	getRoutes( $("#chooseStation").val() );
+	console.log("\nRoute Value: " + user.route );
 });
+
+// listener for the user's choice of a lead walking time
+$('body').on('change', '#chooseWalkTime', function( e ){
+	user.leadTime = $("#chooseWalkTime").val();
+
+	console.log("\nLead Time Value: " + user.leadTime );
+});
+
+// listener for the button which calls the getTime() funct
+$('#getCountdownTime').on('click', function( e ){
+	console.log( user );
+	// getTime( user );
+});
+
+// console.log("\nstation: " + user.station +
+// 			"\nroute: " + user.route +
+// 			"\nleadTime: " + user.leadTime );
+//	user.station
+//	user.route
+//	user.leadTime
 
 }); // end doc ready
 
