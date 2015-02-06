@@ -95,7 +95,6 @@ $(document).ready(function(){
 
 			if(bartData.root.message === ""){
 // API returned non-error
-				// console.log("moving forward... no error");
 console.log( bartData );
 				var source = $('#trainLine-template').html();
 				var template = Handlebars.compile(source);
@@ -139,7 +138,7 @@ console.log( bartData );
 		    alert( "getRoutes completed" );
 		} // end always handler
 
-		} // end ???
+		} // end of what???
 
 	); // end ajax
 	}; //end getRoutes function
@@ -151,19 +150,18 @@ console.log( bartData );
 	// root.station.etd[i].abbreviation
 	//	 				  .destination
 	//	 				  .estimate[i]
-	// 						  .minutes 
+	// 						  .minutes
+
 	var stationObj = bartData.root.station.etd[ user.routeIndex ];
 	for (var i = 0; i < stationObj.estimate.length; i++) {
 			var trainTime = parseInt( stationObj.estimate[i].minutes )-1;
-// console.log( "trainTime: " + trainTime );
-// console.log( user.leadTime );
-
 			if ( trainTime > user.leadTime ) {
 				var timeResult = trainTime - user.leadTime;
-				// console.log( "Train lead time: " + stationObj.estimate[i].minutes );
-				// console.log( "User lead time: " + user.leadTime );
-				// console.log( "Index: " + i + " has " + timeResult.toString() + " time.");
-				console.log( ">>> " + timeResult.toString() );
+// console.log( "Train lead time: " + stationObj.estimate[i].minutes );
+// console.log( "User lead time: " + user.leadTime );
+// console.log( "Index: " + i + " has " + timeResult.toString() + " time.");
+console.log( ">>> " + timeResult.toString() );
+//timeResult is the end point of the data. IE how much time the user has left	
 			}
 		}
 	};
