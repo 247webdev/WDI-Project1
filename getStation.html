@@ -21,7 +21,7 @@
 		<select name="stationAbbr" id="chooseStation" style="display: inline-block;" required autofocus>
 			<option disabled>-What station are you leaving from?</option>
 			{{#each stationData.root.stations.station}}
-				<option value="{{abbr}}">{{name}}</option>
+				<option value="{{abbr}}" data-index="{{@index}}">{{name}}</option>
 			{{/each}}
 		</select>
 	</script>
