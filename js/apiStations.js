@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	var x2js = new X2JS(),
 		user = {
 			"station":"",
@@ -6,7 +7,9 @@ $(document).ready(function(){
 			"route":"",
 			"routeIndex":"",
 			"leadTime":"1",
-			"trainObj":""
+			"trainObj":"",
+			"timeArray":[], // array of the possible train times (usually 3 trains)
+			"userLeaveingIn":0 // time the app displays of how much time the user has until leaving for train
 		},
 		bartData,
 		recursionCount = 0,
@@ -34,7 +37,7 @@ $(document).ready(function(){
 				var source = $('#staionList-template').html();
 				var template = Handlebars.compile(source);
 				var html = template({stationData: bartData});
-				$('.container').html(html);
+				$('.containerStations').html(html);
 
 			}else{
 // API returned error message
@@ -144,64 +147,106 @@ console.log( bartData );
 	}; //end getRoutes function
 
 	var getTime = function(){
-// console.log("bartData: " + bartData + "user.routeIndex: " + user.routeIndex );
-// console.log("Get train time: " + bartData.root.station.etd[ user.routeIndex ].estimate[0].minutes );
-// console.log("Num of trains coming soon: " + bartData.root.station.etd[ user.routeIndex ].estimate.length );
-	// root.station.etd[i].abbreviation
-	//	 				  .destination
-	//	 				  .estimate[i]
-	// 						  .minutes
+		user.timeArray = []; // zero out train time array
 
-	var stationObj = bartData.root.station.etd[ user.routeIndex ];
-	for (var i = 0; i < stationObj.estimate.length; i++) {
-			var trainTime = parseInt( stationObj.estimate[i].minutes )-1;
-			if ( trainTime > user.leadTime ) {
-				var timeResult = trainTime - user.leadTime;
-// console.log( "Train lead time: " + stationObj.estimate[i].minutes );
-// console.log( "User lead time: " + user.leadTime );
-// console.log( "Index: " + i + " has " + timeResult.toString() + " time.");
-console.log( ">>> " + timeResult.toString() );
-//timeResult is the end point of the data. IE how much time the user has left	
+		var startTime = new Date();
+
+	// console.log("bartData: " + bartData + "user.routeIndex: " + user.routeIndex );
+	// console.log("Get train time: " + bartData.root.station.etd[ user.routeIndex ].estimate[0].minutes );
+	// console.log("Num of trains coming soon: " + bartData.root.station.etd[ user.routeIndex ].estimate.length );
+		// root.station.etd[i].abbreviation
+		//	 				  .destination
+		//	 				  .estimate[i]
+		// 						  .minutes
+
+		var stationObj = bartData.root.station.etd[ user.routeIndex ];
+
+		for (var i = 0, trainFoundIndex = 0; i < stationObj.estimate.length; i++) {
+				var trainTime = parseInt( stationObj.estimate[i].minutes )-1;
+				if ( trainTime > user.leadTime ) {
+					user.userLeaveingIn = trainTime - user.leadTime;
+					user.timeArray[trainFoundIndex] = user.userLeaveingIn; // array of the available user leave times based on train at statinoObj.estimate[index]
+					trainFoundIndex++;
+
+	console.log(user.userLeaveingIn); // here, is how much time the user has left until they need to leave for their train
+	// console.log( "Train lead time: " + stationObj.estimate[i].minutes );
+	// console.log( "User lead time: " + user.leadTime );
+	// console.log( "Index: " + i + " has " + user.userLeaveingIn.toString() + " time.");
+
+	// console.log( "Train Index " + (trainFoundIndex-1) + "\n" + "Your #" + trainFoundIndex + " train leaves your selected station in " + user.userLeaveingIn.toString() + " minute." ); // this shows the array index of the train and the lead time for said train
+
 			}
+		} // end for loop on stationObj.estimate
+	// console.log( "time array " + user.timeArray ); // this shows the array of valid trains the user can get given their lead walking time
+
+		var currentTime = setInterval( function(){ timer(); }, 1000 );
+		function timer() {
+			var tickingTime = new Date();
+			// tickingTime = tickingTime.toLocaleTimeString();
+			var timeDifference = tickingTime - startTime;
+			var userLeave = 
+
+	// console.log("timeDifference " + timeDifference + "\n");
+	console.log("user.userLeaveingIn " + ((user.userLeaveingIn * 1000)-timeDifference) + "\n");
+
+			displayTimeDifference = "Difference Time " + timeDifference + "\n" + // .toLocaleTimeString();
+							 "Remaining Time " + (user.userLeaveingIn * 1000) - timeDifference;
+
+// STILL NEED TO SHOW THE REMAINING TIME
+// the function below subtracts 180 seconds from the date passed. take out the minus and it can add seconds
+//function dateAdd(date, units) {
+//   date.setTime(date.getTime() + units*1000);
+//   return date;
+// }
+
+// d = new Date();
+// document.getElementById('output').innerHTML = dateAdd(d, -180);
+
+
+
+			document.getElementById("currentTime").innerHTML = displayTimeDifference;
+	// user.timeArray  array of the available trains
+
 		}
+
 	};
 
 
-getStations();
+	getStations();
 
 
 // listener for the user's choice of a station
-$('body').on('change', '#chooseStation', function( e ){
-	user.station = $("#chooseStation").val();
-	user.stationIndex = $("#chooseStation")[0].selectedIndex -1;
-// console.log( $("#chooseStation")[0].selectedIndex -1 ); // match this value against the Inspect Element in Concole data-index
-// console.log( "\nstation index: " + user.stationIndex );
-// console.log( "\nStation Value: " + user.station );
+	$('body').on('change', '#chooseStation', function( e ){
+		user.station = $("#chooseStation").val();
+		user.stationIndex = $("#chooseStation")[0].selectedIndex -1;
+	// console.log( $("#chooseStation")[0].selectedIndex -1 ); // match this value against the Inspect Element in Concole data-index
+	// console.log( "\nstation index: " + user.stationIndex );
+	// console.log( "\nStation Value: " + user.station );
 
-	getRoutes();
-});
+		getRoutes();
+	});
 
 // listener for the user's choice of a train line
-$('body').on('change', '#chooseRoute', function( e ){
-	user.route = $("#chooseRoute").val();
-	user.routeIndex = $("#chooseRoute")[0].selectedIndex -1;
+	$('body').on('change', '#chooseRoute', function( e ){
+		user.route = $("#chooseRoute").val();
+		user.routeIndex = $("#chooseRoute")[0].selectedIndex -1;
 
-// console.log("\nRoute Index: " + user.routeIndex);
-// console.log("\nRoute Value: " + user.route );
-});
+	// console.log("\nRoute Index: " + user.routeIndex);
+	// console.log("\nRoute Value: " + user.route );
+	});
 
 // listener for the user's choice of a lead walking time
-$('body').on('change', '#chooseWalkTime', function( e ){
-	user.leadTime = $("#chooseWalkTime").val();
+	$('body').on('change', '#chooseWalkTime', function( e ){
+		user.leadTime = $("#chooseWalkTime").val();
 
-// console.log("\nLead Time Value: " + user.leadTime );
-});
+	// console.log("\nLead Time Value: " + user.leadTime );
+	});
 
 // listener for the button which calls the getTime() funct
-$('#getCountdownTime').on('click', function( e ){
-	// console.log( user );
-	getTime();
-});
+	$('#getCountdownTime').on('click', function( e ){
+		// console.log( user );
+		getTime();
+	});
 
 // console.log("\nstation: " + user.station +
 // 			"\nroute: " + user.route +
@@ -211,4 +256,3 @@ $('#getCountdownTime').on('click', function( e ){
 //	user.leadTime
 
 }); // end doc ready
-

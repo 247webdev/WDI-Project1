@@ -10,7 +10,7 @@
 	<div id="errorMsg"></div>
 
 	<div>
-		<div>Stations: <span class="container"></span></div><!-- this is where handlebars puts the stations dropdown -->
+		<div>Stations: <span class="containerStations"></span></div><!-- this is where handlebars puts the stations dropdown -->
 		<div>Train line: <span class="container2"><select><option disabled="disabled"></option></select></span>
 		</div><!-- this is where handlebars puts the trian line dropdown -->
 		<div>Minutes of walking time: <span class="walkTimeSelect"></span></div>
@@ -25,14 +25,13 @@
 			{{/each}}
 		</select>
 	</script>
-
 <!--
-At this point, user has selected a station.
-Now, which direction?
-http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DELN&key=MW9S-E7SL-26DU-VV8V
-Data path:
-root.station.etd[i].destination and abbreviation
- -->
+	At this point, user has selected a station.
+	Now, which direction?
+	http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DELN&key=MW9S-E7SL-26DU-VV8V
+	Data path:
+	root.station.etd[i].destination and abbreviation
+-->
 	<script id="trainLine-template" type="text/x-handlebars-template">
 		<select name="trainRoute" id="chooseRoute" required autofocus>
 			<option disabled>-Which train direction?</option>

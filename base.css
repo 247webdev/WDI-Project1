@@ -1,11 +1,11 @@
 body {
 	padding: 5px;
-	background-color: #A0FF3F;
+	background-color: #226a8f;
 }
 
 .navbar-brand span {
 	color: #c52442;
-	font-weight: bold;
+	font-weight: bolder;
 }
 
 .navContainer {
@@ -30,11 +30,6 @@ body {
 
 .xxxxxxx {
 	
-}
-
-.heart {
-	content: " &#9829; ";
-}
 }
 
 /*

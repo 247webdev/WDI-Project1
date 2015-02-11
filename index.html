@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Arrive in time</title>
+	<title>Arrive in time</title>
+	<script type='text/javascript' src="https://x2js.googlecode.com/hg/xml2json.js"></script><!-- Parse XML to JSON -->
 	<link href="../commonTools/normalize.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!--   <link href='../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
+<!--MY LOCAL BOOTSTRAP COPY 
+	<link href='../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
 -->
 <link href='base.css' rel='stylesheet'>
 </head>
@@ -17,8 +19,6 @@
 			</a>
 
 			<ul class='nav navbar-nav navbar-right'>
-
-
 				<li><a href='stations.html'>Station Map</a></li>
 			</ul>
 		</div>
@@ -34,31 +34,19 @@
 		</div>
 	</div>
 
-	<div class='container'>
-		<div class='row'>
-		<div class='col-md-3 col-md-offset-1'>
-				<p id="currentTime"></p>
-				<script>
-					var myVar = setInterval( function(){ timer(); }, 1000 );
-					function timer() {
-						var d = new Date();
-						document.getElementById("currentTime").innerHTML = d.toLocaleTimeString();
-					}
-				</script>
-			</div>
-		</div>
-	</div>
-
+<!--
+	<div id="errorMsg" class="modal ONLY SHOW WHEN THERE IS AN ERROR"></div>
+-->
 	<div class='container'>
 		<div class='row well well-lg'>
 
-			<!-- this is where handlebars puts the stations dropdown -->
+<!-- this is where handlebars puts the stations dropdown -->
 			<div class='col-md-3 col-md-offset-1'>
 				<h4 class='panel-title'>Station </h4>
-				<span class="container"></span>
+				<span class="containerStations"></span>
 			</div>
 
-			<!-- this is where handlebars puts the trian line dropdown -->
+<!-- this is where handlebars puts the trian line dropdown -->
 			<div class='col-md-3 col-md-offset-0'>
 				<h4 class='panel-title'>Train Line</h4>
 				<span class="container2">
@@ -68,7 +56,6 @@
 				</span>
 			</div>
 
-
 			<div class='col-md-3 col-md-offset-0'>
 				<h4 class='panel-title'>Walking Time</h4>
 				<span class="walkTimeSelect"></span>
@@ -77,14 +64,25 @@
 			<div class='col-md-1 col-md-offset-0'>
 				<button id="getCountdownTime" type="button" >Start Timer</button>
 			</div>
-
-
 		</div>
+
+		<div class='row'>
+			<div class='col-mxs-12 col-xs-offset-0 text-center'>
+				<p id="currentTime"></p>
+<!-- timer here -->
+			</div>
+		</div>
+
 	</div>
 
-
 	<div class='footer nav navbar-default navbar-fixed-bottom'>
-		<div class='container'>
+		<div class='container toggle-on-when-about.html-is-clicked'>
+			<div class="row">
+				<li><a href='#'>About</a></li>
+			</div>
+		</div>
+
+		<div class='container toggle-off-when-about.html-is-clicked'>
 
 			<div class='row'>
 
@@ -149,29 +147,28 @@
 			{{/each}}
 		</select>
 	</script>
-
 <!--
-At this point, user has selected a station.
-Now, which direction?
-http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DELN&key=MW9S-E7SL-26DU-VV8V
-Data path:
-root.station.etd[i].destination and abbreviation
+	At this point, user has selected a station.
+	Now, which direction?
+	http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DELN&key=MW9S-E7SL-26DU-VV8V
+	Data path:
+	root.station.etd[i].destination and abbreviation
 -->
-<script id="trainLine-template" type="text/x-handlebars-template">
-	<select name="trainRoute" id="chooseRoute" required autofocus>
-		<option disabled>-Which train direction?</option>
-		{{#each stationData.root.station.etd}}
-		<option value="{{abbreviation}}">{{destination}}</option>
-		{{/each}}
-	</select>
-</script>
-
+	<script id="trainLine-template" type="text/x-handlebars-template">
+		<select name="trainRoute" id="chooseRoute" required autofocus>
+			<option disabled>-Which train direction?</option>
+			{{#each stationData.root.station.etd}}
+			<option value="{{abbreviation}}">{{destination}}</option>
+			{{/each}}
+		</select>
+	</script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 <script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
-<script type='text/javascript' src="https://x2js.googlecode.com/hg/xml2json.js"></script> <!-- needed for parsing XML to JSON -->
+<script src="js/apiStations.js"></script>
+<script src="js/logicStations.js"></script>
 
-<script src="js/app.js"></script>
+<!-- <script src="js/app.js"></script> -->
 </body>
 </html>
