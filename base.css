@@ -16,21 +16,32 @@ body {
 	
 }
 
-.xxxxxxx {
-	
+.lead {
+	color: #fff;
 }
 
-.xxxxxxx {
-	
+.timerControls {
+	display: inline;
 }
 
-.xxxxxxx {
-	
+.marginTop1x {
+	top: 5px;
 }
 
-.xxxxxxx {
-	
+/* ********************************** */
+/* Take out for production version!!! */
+/* ********************************** */
+.fixedUR {
+	position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 0 2px;
+  background-color: #E88B1A;
+  border: 1px solid #000;
 }
+/* ********************************** */
+/* ********************************** */
+/* ********************************** */
 
 /*
 make this appear on hover

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Map at user's location</title>
+
+  <style>
+    #map {
+      height: 400px;
+      width: 400px;
+      margin: 0 auto;
+    }
+    .container {
+      width: 100%;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div id="map"></div>
+  </div>
+
+  <script src="http://maps.googleapis.com/maps/api/js?callback=mapReady"></script>
+  <script>
+    var marker = null;
+
+    function getCurrentLocation(callback) {
+      navigator.geolocation.watchPosition(callback);
+    }
+
+    function addMarker(opts, info) {
+      var marker = new google.maps.Marker(opts);
+
+      var infoWindow = new google.maps.InfoWindow({content: info});
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.open(opts.map, marker);
+      });
+      return marker;
+    }
+
+    function mapReady() {
+      var container = document.querySelector('#map');
+      var map = new google.maps.Map(container, {
+        zoom: 14, disableDefaultUI: true
+      });
+
+      getCurrentLocation(function(pos) {
+        var current = new google.maps.LatLng(pos.coords.latitude, 
+         pos.coords.longitude);
+        map.setCenter(current);
+
+      // Re-position marker or create new one.
+      if (marker) {
+        marker.setPosition(map.getCenter());
+      } else {
+        marker = addMarker({
+          position: current, map: map, title: 'Your location'
+        }, '<b>Your location</b>');
+      }
+    });
+    }
+  </script>
+</body>
+</html>

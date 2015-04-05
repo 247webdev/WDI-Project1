@@ -17,19 +17,9 @@
 			<a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>
 				<span>Arrive in time</span>
 			</a>
-<!-- ********************************** -->
-<!-- ********************************** -->
-<!-- Take out for production version!!! -->
-<!-- ********************************** -->
-<!-- ********************************** -->
-<div class="visible-xs fixedUR">XS</div>
-<div class="visible-sm fixedUR">SM</div>
-<div class="visible-md fixedUR">MD</div>
-<div class="visible-lg fixedUR">LG</div>
-<!-- ********************************** -->
-<!-- ********************************** -->
+
 			<ul class='nav navbar-nav navbar-right'>
-				<li><a href='stations.html'>Station Map</a></li>
+				<li><a href='index.html'>Home</a></li>
 			</ul>
 		</div>
 	</div>
@@ -39,51 +29,15 @@
 		<div class="row">
 			<div class="col-xs-12 col-xs-offset-0 text-center visible-md visible-lg">
 				<p class='lead'>Catch your BART train just in time; not a moment wasted.</p>
-				<div id="errorMsg" class="alert alert-warning hidden" role="alert"></div> <!-- have JavaScript switch this to .show when there is an error. -->
+				<div id="errorMsg"></div>
 			</div>
 		</div>
 	</div>
 
-<!--
-	<div id="errorMsg" class="modal ONLY SHOW WHEN THERE IS AN ERROR"></div>
--->
 	<div class='container'>
-		<div class='row well well-lg'>
-
-<!-- this is where handlebars puts the stations dropdown -->
-			<div class='col-md-3 col-md-offset-0'>
-				<h4 class='panel-title'>Station </h4>
-				<span class="containerStations"></span>
-			</div>
-
-<!-- this is where handlebars puts the trian line dropdown -->
-			<div class='col-md-2 col-md-offset-0 text-center'>
-				<h4 class='panel-title'>Train Line</h4>
-				<span class="container2">
-					<select>
-						<option disabled="disabled"></option>
-					</select>
-				</span>
-			</div>
-
-			<div class='col-md-2 col-md-offset-0 text-center'>
-				<h4 class='panel-title'>Walking Time</h4>
-				<span class="walkTimeSelect"></span>
-			</div>
-
-			<div class='col-md-3 col-md-offset-1 text-right marginTop1x'>
-				<button id="getCountdownTime" type="button" class="timerControls btn btn-success">Start Timer</button>
-				<button id="stopCountdownTime" type="button" class="timerControls btn btn-danger">Stop Timer</button>
-			</div>
+		<div class='row well well-lg text-center'>
+			<img src="images/map.gif" width="80%" alt="BART Station Map">
 		</div>
-
-		<div class='row'>
-			<div class='col-mxs-12 col-xs-offset-0 text-center'>
-				<p id="currentTime"></p>
-<!-- timer here -->
-			</div>
-		</div>
-
 	</div>
 
 	<div class='footer nav navbar-default navbar-fixed-bottom'>
