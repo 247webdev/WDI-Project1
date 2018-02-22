@@ -2,34 +2,32 @@
 <html>
 <head>
 	<title>Arrive in time</title>
-	<script type='text/javascript' src="https://x2js.googlecode.com/hg/xml2json.js"></script><!-- Parse XML to JSON -->
 	<link href="../commonTools/normalize.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!--MY LOCAL BOOTSTRAP COPY 
-	<link href='../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
--->
-<link href='base.css' rel='stylesheet'>
+	<link href='base.css' rel='stylesheet'>
 </head>
 
 <body>
 	<div class='navbar navbar-default navbar-static-top'>
 		<div class='container'>
 			<a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>
-				<span>Arrive in time</span>
+				<span>Arrive in time to catch your BART train!</span>
 			</a>
 
 			<ul class='nav navbar-nav navbar-right'>
 				<li><a href='index.html'>Home</a></li>
+				<li><a href='howtouse.html'>Using this App</a></li>
+				<li><a href='about.html'>About this App</a></li>
 			</ul>
 		</div>
 	</div>
 
-	<!-- DISPLAY INTRO TAG-LINE -->
+	<!-- BODY CONTAINERS -->
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-xs-offset-0 text-center visible-md visible-lg">
-				<p class='lead'>Catch your BART train just in time; not a moment wasted.</p>
-				<div id="errorMsg"></div>
+				<p class="lead">Find your departure station and note what direction you're going.</p>
+				<p class="lead">The direction is the name of the last station at the end of the line.</p>
 			</div>
 		</div>
 	</div>
@@ -40,100 +38,11 @@
 		</div>
 	</div>
 
-	<div class='footer nav navbar-default navbar-fixed-bottom'>
-		<div class='container toggle-on-when-about.html-is-clicked'>
-			<div class="row">
-				<li><a href='#'>About</a></li>
-			</div>
-		</div>
-
-		<div class='container toggle-off-when-about.html-is-clicked'>
-
-			<div class='row'>
-
-				<span class="hidden-xs">
-					<div class='col-sm-6'>
-						<span><a href='http://247webdev.blogspot.com/' target="_new">Blog</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='http://twitter.com/DroidAppy' target="_new">Twitter</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='https://www.facebook.com/faceChandler' target="_new">Facebook</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='http://www.linkedin.com/in/christianchandler/' target="_new">Linkedin</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='https://plus.google.com/113001875924737671984/posts' target="_new">Google+</a></span>
-					</div>
-
-					<div class='col-sm-6'>
-						<span><i class='glyphicon glyphicon-globe'></i> Richmond, CA</span>
-						<span class="hidden-sm">|</span>
-						<span><i class='glyphicon glyphicon-phone'></i> 510-852-0139</span>
-						<span class="hidden-sm">|</span>
-						<span><i class='glyphicon glyphicon-envelope'></i><a href='mailto:247webdev@gmail.com'> 247webdev@gmail.com</a></span>
-					</div>
-				</span><!-- END hidden-xs -->
-
-				<span class="visible-xs">
-					<div class="row">
-						<div class='col-sm-12 col-xs-offset-0'>
-							<span><a href='http://247webdev.blogspot.com/' target="_new">Blog</a></span>
-							<span><a href='http://twitter.com/DroidAppy' target="_new">Twitter</a></span>
-							<span><a href='https://www.facebook.com/faceChandler' target="_new">Facebook</a></span>
-							<span><a href='http://www.linkedin.com/in/christianchandler/' target="_new">Linkedin</a></span>
-							<span><a href='https://plus.google.com/113001875924737671984/posts' target="_new">Google+</a></span>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class='col-sm-12 visible-xs'>
-							<span><i class='glyphicon glyphicon-globe'></i> Richmond, CA</span>
-							<span><i class='glyphicon glyphicon-phone'></i> 510-852-0139</span>
-							<span><i class='glyphicon glyphicon-envelope'></i><a href='mailto:247webdev@gmail.com'> 247webdev@gmail.com</a></span>
-						</div>
-
-					</div>
-				</span><!-- END visible-xs -->
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12">
-					<p class="muted text-center lower"><span class="emphasis">Arrive In Time</span> - Christian Chandler's WDI Project #1 with <span class="visible-xs">&#13;</span>design collaboration from Steven Tran UXDi. Thanks!</p>          
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<script id="staionList-template" type="text/x-handlebars-template">
-		<select name="stationAbbr" id="chooseStation" style="display: inline-block;" required autofocus>
-			<option disabled>-What station are you leaving from?</option>
-			{{#each stationData.root.stations.station}}
-			<option value="{{abbr}}" data-index="{{@index}}">{{name}}</option>
-			{{/each}}
-		</select>
-	</script>
-<!--
-	At this point, user has selected a station.
-	Now, which direction?
-	http://api.bart.gov/api/etd.aspx?cmd=etd&orig=DELN&key=MW9S-E7SL-26DU-VV8V
-	Data path:
-	root.station.etd[i].destination and abbreviation
--->
-	<script id="trainLine-template" type="text/x-handlebars-template">
-		<select name="trainRoute" id="chooseRoute" required autofocus>
-			<option disabled>-Which train direction?</option>
-			{{#each stationData.root.station.etd}}
-			<option value="{{abbreviation}}">{{destination}}</option>
-			{{/each}}
-		</select>
-	</script>
+	<div class='footer nav navbar-default navbar-fixed-bottom'></div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 <script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
-<script src="js/apiStations.js"></script>
-<script src="js/logicStations.js"></script>
+<script src="js/footer.js"></script>
 
-<!-- <script src="js/app.js"></script> -->
 </body>
 </html>

@@ -24,15 +24,15 @@ $(document).ready(function () {
 					}
 //				$( "<h1>" ).text( xml.title ).appendTo( "body" );
 //				$( "<div class=\"content\">").html( json.html ).appendTo( "body" );
-		},
-		error: function( xhr, status, errorThrown ) {
-			alert( "Sorry, there was a problem!" );
-			console.log( "Error: " + errorThrown );
-			console.log( "Status: " + status );
-			console.dir( xhr );
-		},
-		complete: function( xhr, status ) {
-			alert( "The request is complete!" );
+				},
+				error: function( xhr, status, errorThrown ) {
+					alert( "Sorry, there was a problem!" );
+					console.log( "Error: " + errorThrown );
+					console.log( "Status: " + status );
+					console.dir( xhr );
+				},
+				complete: function( xhr, status ) {
+					alert( "The request is complete!" );
 				}
 			});
 		};

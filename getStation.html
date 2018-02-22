@@ -19,7 +19,7 @@
 
 	<script id="staionList-template" type="text/x-handlebars-template">
 		<select name="stationAbbr" id="chooseStation" style="display: inline-block;" required autofocus>
-			<option disabled>-What station are you leaving from?</option>
+			<option value=null>-What station are you leaving from?</option> <!-- <option disabled> -->
 			{{#each stationData.root.stations.station}}
 				<option value="{{abbr}}" data-index="{{@index}}">{{name}}</option>
 			{{/each}}

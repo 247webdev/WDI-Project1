@@ -1,11 +1,32 @@
+/* Page color scheme triad body background #226a8f (a blue), #8e226a (a red), #6a8e22 (a green) triads are taking the values for R, G, and B and swapping them  */
+
 body {
-	padding: 5px;
-	background-color: #226a8f;
+  background-color: #226a8f;
+  padding: 5px;
 }
 
+.footer {
+  background-color: #6a8e22;
+  border-top: 3px solid #8e226a;
+  padding: 4px;
+}
+
+div.footer > div.container {
+  color: white;
+}
+
+.footer a {
+    color: white;
+  }
+
+  div > span > i {
+    margin-right: 5px;
+    color: white;
+  }
+
 .navbar-brand span {
-	color: #c52442;
-	font-weight: bolder;
+  color: #c52442;
+  font-weight: bolder;
 }
 
 .navContainer {
@@ -17,22 +38,30 @@ body {
 }
 
 .lead {
-	color: #fff;
+  color: #fff;
 }
 
 .timerControls {
-	display: inline;
+  display: inline;
 }
 
 .marginTop1x {
-	top: 5px;
+  top: 5px;
+}
+
+.aboutEmphasize {
+  font-weight: bold;
+}
+
+.social-seperator {
+  margin: 10px 0;
 }
 
 /* ********************************** */
 /* Take out for production version!!! */
 /* ********************************** */
 .fixedUR {
-	position: fixed;
+  position: fixed;
   top: 0px;
   left: 0px;
   padding: 0 2px;

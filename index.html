@@ -2,24 +2,26 @@
 <html>
 <head>
 	<title>Arrive in time</title>
-	<script type='text/javascript' src="https://x2js.googlecode.com/hg/xml2json.js"></script><!-- Parse XML to JSON -->
-	<link href="../commonTools/normalize.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!--MY LOCAL BOOTSTRAP COPY 
-	<link href='../commonTools/bootstrap/dist/css/bootstrap.css' rel='stylesheet' >
--->
-<link href='base.css' rel='stylesheet'>
+	<!-- CDN <script type='text/javascript' src="https://x2js.googlecode.com/hg/xml2json.js"></script>  -->
+	<script type='text/javascript' src="js/xml2json.min.js"></script><!-- Parse XML to JSON -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+	<script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href='base.css' rel='stylesheet'>
 </head>
 
 <body>
 	<div class='navbar navbar-default navbar-static-top'>
 		<div class='container'>
 			<a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>
-				<span>Arrive in time</span>
+				<span>Arrive in time to catch your BART train!</span>
 			</a>
 <!-- ********************************** -->
 <!-- ********************************** -->
 <!-- Take out for production version!!! -->
+<!-- This shows in the upper left the responsive size based on screen -->
 <!-- ********************************** -->
 <!-- ********************************** -->
 <div class="visible-xs fixedUR">XS</div>
@@ -30,6 +32,8 @@
 <!-- ********************************** -->
 			<ul class='nav navbar-nav navbar-right'>
 				<li><a href='stations.html'>Station Map</a></li>
+				<li><a href='howtouse.html'>Using this App</a></li>
+				<li><a href='about.html'>About this App</a></li>
 			</ul>
 		</div>
 	</div>
@@ -38,7 +42,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-xs-offset-0 text-center visible-md visible-lg">
-				<p class='lead'>Catch your BART train just in time; not a moment wasted.</p>
+				<p class='lead'>Pick your train and how long it will take you to get to the station.</p>
 				<div id="errorMsg" class="alert alert-warning hidden" role="alert"></div> <!-- have JavaScript switch this to .show when there is an error. -->
 			</div>
 		</div>
@@ -48,16 +52,20 @@
 	<div id="errorMsg" class="modal ONLY SHOW WHEN THERE IS AN ERROR"></div>
 -->
 	<div class='container'>
-		<div class='row well well-lg'>
 
-<!-- this is where handlebars puts the stations dropdown -->
-			<div class='col-md-3 col-md-offset-0'>
+		<!-- this is shown when a show stopping error with the API prevents the app from running -->
+		<div class='col-md-8 col-md-offset-0' id='fatalMsg'></div>
+
+		<div class='row well well-lg' id="steps">
+
+			<!-- this is where handlebars puts the stations dropdown -->
+			<div class='col-md-3 col-md-offset-0' id='step1'>
 				<h4 class='panel-title'>Station </h4>
 				<span class="containerStations"></span>
 			</div>
 
-<!-- this is where handlebars puts the trian line dropdown -->
-			<div class='col-md-2 col-md-offset-0 text-center'>
+			<!-- this is where handlebars puts the trian line dropdown -->
+			<div class='col-md-2 col-md-offset-0 text-center' id='step2'>
 				<h4 class='panel-title'>Train Line</h4>
 				<span class="container2">
 					<select>
@@ -66,12 +74,12 @@
 				</span>
 			</div>
 
-			<div class='col-md-2 col-md-offset-0 text-center'>
+			<div class='col-md-2 col-md-offset-0 text-center' id='step3'>
 				<h4 class='panel-title'>Walking Time</h4>
 				<span class="walkTimeSelect"></span>
 			</div>
 
-			<div class='col-md-3 col-md-offset-1 text-right marginTop1x'>
+			<div class='col-md-3 col-md-offset-1 text-right marginTop1x' id='step4'>
 				<button id="getCountdownTime" type="button" class="timerControls btn btn-success">Start Timer</button>
 				<button id="stopCountdownTime" type="button" class="timerControls btn btn-danger">Stop Timer</button>
 			</div>
@@ -86,73 +94,11 @@
 
 	</div>
 
-	<div class='footer nav navbar-default navbar-fixed-bottom'>
-		<div class='container toggle-on-when-about.html-is-clicked'>
-			<div class="row">
-				<li><a href='#'>About</a></li>
-			</div>
-		</div>
-
-		<div class='container toggle-off-when-about.html-is-clicked'>
-
-			<div class='row'>
-
-				<span class="hidden-xs">
-					<div class='col-sm-6'>
-						<span><a href='http://247webdev.blogspot.com/' target="_new">Blog</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='http://twitter.com/DroidAppy' target="_new">Twitter</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='https://www.facebook.com/faceChandler' target="_new">Facebook</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='http://www.linkedin.com/in/christianchandler/' target="_new">Linkedin</a></span>
-						<span class="hidden-sm">|</span>
-						<span><a href='https://plus.google.com/113001875924737671984/posts' target="_new">Google+</a></span>
-					</div>
-
-					<div class='col-sm-6'>
-						<span><i class='glyphicon glyphicon-globe'></i> Richmond, CA</span>
-						<span class="hidden-sm">|</span>
-						<span><i class='glyphicon glyphicon-phone'></i> 510-852-0139</span>
-						<span class="hidden-sm">|</span>
-						<span><i class='glyphicon glyphicon-envelope'></i><a href='mailto:247webdev@gmail.com'> 247webdev@gmail.com</a></span>
-					</div>
-				</span><!-- END hidden-xs -->
-
-				<span class="visible-xs">
-					<div class="row">
-						<div class='col-sm-12 col-xs-offset-0'>
-							<span><a href='http://247webdev.blogspot.com/' target="_new">Blog</a></span>
-							<span><a href='http://twitter.com/DroidAppy' target="_new">Twitter</a></span>
-							<span><a href='https://www.facebook.com/faceChandler' target="_new">Facebook</a></span>
-							<span><a href='http://www.linkedin.com/in/christianchandler/' target="_new">Linkedin</a></span>
-							<span><a href='https://plus.google.com/113001875924737671984/posts' target="_new">Google+</a></span>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class='col-sm-12 visible-xs'>
-							<span><i class='glyphicon glyphicon-globe'></i> Richmond, CA</span>
-							<span><i class='glyphicon glyphicon-phone'></i> 510-852-0139</span>
-							<span><i class='glyphicon glyphicon-envelope'></i><a href='mailto:247webdev@gmail.com'> 247webdev@gmail.com</a></span>
-						</div>
-
-					</div>
-				</span><!-- END visible-xs -->
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12">
-					<p class="muted text-center lower"><span class="emphasis">Arrive In Time</span> - Christian Chandler's WDI Project #1 with <span class="visible-xs">&#13;</span>design collaboration from Steven Tran UXDi. Thanks!</p>          
-				</div>
-			</div>
-
-		</div>
-	</div>
+	<div class='footer nav navbar-default navbar-fixed-bottom'></div>
 
 	<script id="staionList-template" type="text/x-handlebars-template">
 		<select name="stationAbbr" id="chooseStation" style="display: inline-block;" required autofocus>
-			<option disabled>-What station are you leaving from?</option>
+			<option value=null>-What station are you leaving from?</option> <!-- <option disabled> -->
 			{{#each stationData.root.stations.station}}
 			<option value="{{abbr}}" data-index="{{@index}}">{{name}}</option>
 			{{/each}}
@@ -174,12 +120,19 @@
 		</select>
 	</script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-<script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
+<!-- 	<script type="text/javascript" language="JavaScript">
+		$.ajax({
+		    url: "footer.html", 
+		    context: document.body,
+		    success: function(response) {
+		        $(".footer").html(response);
+		    }
+		});
+	</script> -->
+
 <script src="js/apiStations.js"></script>
 <script src="js/logicStations.js"></script>
+<script src="js/footer.js"></script>
 
-<!-- <script src="js/app.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrive in time</title>
+	<link href="../commonTools/normalize.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href='base.css' rel='stylesheet'>
+</head>
+
+<body>
+	<div class='navbar navbar-default navbar-static-top'>
+		<div class='container'>
+			<a href='file:///Users/christianbc/wdi/Project1/index.html' class='navbar-brand'>
+				<span>Arrive in time to catch your BART train!</span>
+			</a>
+
+			<ul class='nav navbar-nav navbar-right'>
+				<li><a href='index.html'>Home</a></li>
+				<li><a href='stations.html'>Station Map</a></li>
+				<li><a href='about.html'>About this App</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- BODY CONTAINERS -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-xs-offset-0 text-center visible-md visible-lg">
+				<p class='lead'>How to use this App</p>
+			</div>
+		</div>
+	</div>
+
+	<div class='container'>
+		<div class='row well well-lg text-left'>
+			<p><span class="aboutEmphasize">What does it do? -</span> This App helps take a little bit of the guess work out of planning when you should leave your location to arrive in time and board your train.</p>
+			<p><span class="aboutEmphasize">How does it work? -</span> The App gets the list of BART stations from BART's API. Then once you select your departing station, direction and lead time, the App gets a list of BART trains pertaining to your selection. The App then accounts for the lead time you selected to provide you with a count down timer for when you should leave you location. Assuming you've selected the appropriate lead time, you should arrive at your train's platform with about a minute before your train arrives.</p>
+			<p><span class="aboutEmphasize">How do I use it? -</span> You first select the BART station you're leaving from. Then you select the direction of the train. The direction is given by the name of the last station of the train line you're riding in the direction you're heading.<br>
+				For example, if you are in San Francisco at the Civic Center Station and going to Berkeley, your departure station is "Civic Center" and the direction is "Richmond".<br>
+				You then provide the lead time you want to allow you to get from say your office or a reasturant to the BART station. This is your choice and accuracy is up to you.<br>
+				Finally, you start the timer and when the timer reaches zero, that is when you should be leaving your current location.</p>
+			<p><span class="aboutEmphasize">App enhancements being considered. -</span> Location awareness to allow the App to determine your lead time based on your current location.<br>
+				The ability to delay your departure time by selecting the next available train. This is useful if you need more time wrapping things up at work or you want to simply enjoy the rest of your meal and not rush it.</p>
+		</div>
+	</div>
+
+	<div class='footer nav navbar-default navbar-fixed-bottom'></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src='../commonTools/bootstrap/dist/js/bootstrap.js'></script>
+<script src="js/footer.js"></script>
+
+</body>
+</html>
